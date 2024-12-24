@@ -9,12 +9,13 @@ services:
       - "8069:8069"
     volumes:
       - data:/var/lib/odoo
+    restart: always
   postgres:
     image: postgres:13
     env_file: .env
     volumes:
       - db:/var/lib/postgresql/data/pgdata
-
+    restart: always
 volumes:
   data:
   db:
